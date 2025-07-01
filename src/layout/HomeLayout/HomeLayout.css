@@ -1,0 +1,25 @@
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+  padding-top: 50px;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 80px; 
+   
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+object-fit: fill;
+
+}

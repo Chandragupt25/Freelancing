@@ -1,0 +1,92 @@
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  
+}
+
+.home-video {
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  object-fit: fill;
+ 
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+ 
+  animation: fadeIn 1.5s ease-in-out;
+}
+.company-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+
+.home-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  animation: slideDown 1.2s ease forwards;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 20px;
+  animation: slideUp 1.2s ease forwards;
+}
+
+.btn-login,
+.btn-signup {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-login {
+  background-color: #161616;
+  color: white;
+}
+
+.btn-signup {
+  background-color: rgb(22, 22, 22);
+  color: #fb923c;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
