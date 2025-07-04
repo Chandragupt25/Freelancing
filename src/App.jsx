@@ -5,6 +5,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Login from './Access/Login';
 import Register from './Access/Register';
+import Dashboard from './components/Worker/Dashboard'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
          <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+           <Route path="/worker/dashboard" element={<Dashboard />} />
       </Route>
       
     </Routes>

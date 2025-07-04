@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Access/Register.css'; // Make sure this file is created
-
+import '../Access/Register.css';
+import axios from 'axios';
 
 export default function Register() {
   const [role, setRole] = useState('worker');
@@ -28,7 +28,7 @@ export default function Register() {
     }));
   };
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     const {
       name, email, phone, city, state, pincode,
       profession, password, confirmPassword
@@ -49,14 +49,23 @@ export default function Register() {
       return;
     }
 
-    if (role === 'worker') navigate('/worker/dashboard');
-    else navigate('/hire/dashboard');
+    try {
+      const res = await axios.post('http://localhost:5000/api/auth/register', {
+        ...formData,
+        role,
+      });
+
+      alert(res.data.message);
+
+      if (role === 'worker') navigate('/worker/dashboard');
+      else navigate('/hire/dashboard');
+    } catch (err) {
+      alert(err.response?.data?.message || "Registration failed");
+    }
   };
 
   return (
     <div className="register-container">
-     
-
       <div className="register-card">
         <h2 className="register-title">
           Register as {role === 'worker' ? 'Worker' : 'Hire'}
@@ -130,8 +139,3 @@ export default function Register() {
     </div>
   );
 }
-
-
-
-
-
